@@ -10,7 +10,7 @@ from pyspark.sql import SparkSession # run a spark session
 
 
 
-pymongo_spark.activate() # activaet the pymongo-spark connector
+pymongo_spark.activate() # activate the pymongo-spark connector
 conf = SparkConf() # define spark configuration
 sc = SparkContext(conf=conf) 
 sqlContext=SQLContext(sc) 
