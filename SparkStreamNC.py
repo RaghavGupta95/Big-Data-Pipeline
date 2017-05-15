@@ -18,7 +18,7 @@ ssc = StreamingContext(sc, 10)# the number denotes the amount after which the sc
 # Create a DStream that will connect to hostname:port, like localhost:9999
 lines = ssc.socketTextStream("localhost", 7792)
 
-# Do the following split on the Dstream and print out the input 
+# Do the following split on the Dstream and print the input
 words = lines.flatMap(lambda line: line.split(" "))
 pairs = words.map(lambda word: (word, 1))
 wordCounts = pairs.reduceByKey(lambda x, y: x + y)
